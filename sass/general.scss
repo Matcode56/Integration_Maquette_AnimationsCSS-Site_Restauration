@@ -1,0 +1,35 @@
+@font-face {
+    font-family: font_title;
+    src: url(../Police/Title/Shrikhand-Regular.otf);
+}
+
+@font-face {
+    font-family: font_text;
+    src: url(../Police/Text/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: font_text_bold;
+    src: url(../Police/Text/Roboto-Bold.ttf);
+}
+
+body{
+    font-family: font_text;
+    margin:0;
+}
+
+a{
+    text-decoration: none;
+}
+h1, h2, h3{
+    font-family: font_text_bold;
+    margin:0;
+}
+$color_primary: #9356DC;
+
+$color_secondary: #FF79DA;
+
+$color_tertiary: #99E2D0;
+
+
+
