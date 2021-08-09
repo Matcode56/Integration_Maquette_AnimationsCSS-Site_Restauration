@@ -1,12 +1,19 @@
 section{
-    height: 100%;
-}
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 290px 450px auto;
+    grid-template-areas: "location"
+                         "explore"
+                         "functionning"
+                         "restaurant";
+    max-width: 1800px;
+    }
 
 .block_location{
+    grid-area: location;
     display:flex;
     justify-content: center;
     align-items: center;
-    height:50px;
     background-color: rgb(218, 214, 214);
     font-weight:bold;
     font-size: 1.1em;
@@ -18,22 +25,21 @@ section{
 }
 
 .block_explore{
+    grid-area: explore;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    padding-right: 10%;
-    padding-left:10%;
     background-color: rgb(243, 239, 239);
     text-align: center;
-
+    padding-left:5%;
+    padding-right:5%;
 }
 
 .block_explore p{
     margin-bottom: 35px;
 }
+
 .block_explore button{
     border-radius: 2rem;
     background: linear-gradient(to right, $color_secondary, $color_primary);
@@ -44,24 +50,36 @@ section{
     border: none;
 
 }
-
 .block_functionning{
+    grid-area: functionning;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    
 }
 
+.block_functionning h2{
+    padding-bottom: 25px;
+}
+
+.steps{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .steps div{
     display: flex;
     align-items: center;
     background:$background_section; 
-    height:70px;
-    width:290px;
+    height:90px;
+    width:80%;
     margin-bottom: 20px;
     border-radius: 1rem;
+    font-family: font_text_bold;
 }
+
 
 .steps div p, .steps div i{
     margin-right: 7%;
@@ -84,12 +102,14 @@ section{
     margin-left: -8px;
 }
 
-
+#step3{
+    background: rgb(147, 86, 220, 0.5);
+}
 .block_restaurant{
-    margin-top:60px;
-    padding-top: 30px;
+    grid-area: restaurant;
     background: $background_section;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+    padding-top: 30px;
 }
 
 .block_restaurant h2{
@@ -128,6 +148,7 @@ section{
 
 .restaurants a{
     height:260px;
+    position: relative;
 }
 
 .restaurants a img{
@@ -138,12 +159,13 @@ section{
 }
 
 .description_restaurant{
+    position: relative;
+    width: 100%;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     background: white;
     margin-top: -3px;
     display: flex;
-    justify-content: space-between;
     height: 30%;
 }
 
@@ -155,9 +177,113 @@ section{
     }
 }
 .description_restaurant i{
-    display: flex;
-    align-items: center;
-    margin-right:3%;
+    position: absolute;
+    right: 2%;
     font-size: 1.5em;
     color: grey;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.description_restaurant i:last-child{
+    display: none;
+}
+
+
+.info_new{
+    position: absolute;
+    top:5%;
+    right:2%;
+    background: $color_tertiary;
+    border-radius: 0.2rem;
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+@media (min-width: 700px) {
+    section{
+        display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 420px auto;
+    row-gap: 20px;
+    grid-template-areas: "location functionning"
+                         "explore functionning"
+                         "restaurant restaurant";
+    }
+
+    .block_explore{
+        background: white;
+        border-right: 5px $color_primary solid;
+
+    }
+
+    .block_functionning{
+        position: relative;
+
+    }
+    .block_functionning h2{
+        position: absolute;
+        top:0%;
+        height:50px;
+        width: 100%;
+        background-color: rgb(243, 239, 239, 0.9);
+        padding-bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+        
+        
+    }
+
+    .steps{
+        margin-top:60px;
+
+    }
+    .block_location{
+        background: rgb(243, 239, 239, 0.9) ;
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+        font-family: font_text_bold;
+        font-size: 1.3em;
+    }
+
+    .restaurants{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "restaurant1 restaurant2"
+                            "restaurant3 restaurant4";
+        margin-left: 5%;
+        margin-right: 5%;
+        row-gap:30px;
+        column-gap: 4%;
+    }
+}
+
+@media (min-width: 1800px) {
+    section{
+        margin: auto;
+    }
+
+    .block_location{
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+    }
+
+    .block_functionning h2{
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+    }
+
+    .block_restaurant{
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        margin-bottom: 30px;
+    }
 }

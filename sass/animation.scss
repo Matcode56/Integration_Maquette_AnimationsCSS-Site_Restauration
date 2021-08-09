@@ -1,0 +1,17 @@
+.steps div:hover{
+    background: rgb(147, 86, 220, 0.2);
+}
+
+.Palette_Gout:hover > .description_restaurant i:last-child{
+        display: flex;
+        background: linear-gradient(to right, rgba(22, 146, 230, 0.1), rgba(255, 121, 218, 0.2));
+        
+}
+
+@keyframes progress_hearth {
+    0%{
+        color:linear-gradient(to right, rgba(147, 86, 220, 0.2), rgba(255, 121, 218, 0.2));
+    }
+}
+
+

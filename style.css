@@ -24,6 +24,10 @@ h1, h2, h3 {
   margin: 0;
 }
 
+img {
+  object-fit: cover;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -36,14 +40,18 @@ header img {
 }
 
 section {
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 290px 450px auto;
+  grid-template-areas: "location" "explore" "functionning" "restaurant";
+  max-width: 1800px;
 }
 
 .block_location {
+  grid-area: location;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
   background-color: #dad6d6;
   font-weight: bold;
   font-size: 1.1em;
@@ -55,16 +63,15 @@ section {
 }
 
 .block_explore {
+  grid-area: explore;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
-  padding-bottom: 50px;
-  padding-right: 10%;
-  padding-left: 10%;
   background-color: #f3efef;
   text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .block_explore p {
@@ -82,21 +89,33 @@ section {
 }
 
 .block_functionning {
+  grid-area: functionning;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+}
+
+.block_functionning h2 {
+  padding-bottom: 25px;
+}
+
+.steps {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .steps div {
   display: flex;
   align-items: center;
   background: #f3efef;
-  height: 70px;
-  width: 290px;
+  height: 90px;
+  width: 80%;
   margin-bottom: 20px;
   border-radius: 1rem;
+  font-family: font_text_bold;
 }
 
 .steps div p, .steps div i {
@@ -120,8 +139,223 @@ section {
   margin-left: -8px;
 }
 
+#step3 {
+  background: rgba(147, 86, 220, 0.5);
+}
+
+.block_restaurant {
+  grid-area: restaurant;
+  background: #f3efef;
+  padding-bottom: 40px;
+  padding-top: 30px;
+}
+
+.block_restaurant h2 {
+  padding-bottom: 20px;
+  margin-left: 3%;
+}
+
+.restaurants {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "restaurant1" "restaurant2" "restaurant3" "restaurant4";
+  margin-left: 5%;
+  margin-right: 5%;
+  row-gap: 20px;
+}
+
+.Palette_Gout {
+  grid-area: restaurant1;
+}
+
+.Note_enchantee {
+  grid-area: restaurant2;
+}
+
+.A_la_francaise {
+  grid-area: restaurant3;
+}
+
+.Delice_des_sens {
+  grid-area: restaurant4;
+}
+
+.restaurants a {
+  height: 260px;
+  position: relative;
+}
+
+.restaurants a img {
+  width: 100%;
+  height: 70%;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.description_restaurant {
+  position: relative;
+  width: 100%;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  background: white;
+  margin-top: -3px;
+  display: flex;
+  height: 30%;
+}
+
+.title_restaurant {
+  padding-top: 10px;
+  margin-left: 4%;
+}
+.title_restaurant p {
+  margin-top: 7px;
+}
+
+.description_restaurant i {
+  position: absolute;
+  right: 2%;
+  font-size: 1.5em;
+  color: grey;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.description_restaurant i:last-child {
+  display: none;
+}
+
+.info_new {
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  background: #99E2D0;
+  border-radius: 0.2rem;
+  font-size: 0.9em;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+@media (min-width: 700px) {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 420px auto;
+    row-gap: 20px;
+    grid-template-areas: "location functionning" "explore functionning" "restaurant restaurant";
+  }
+
+  .block_explore {
+    background: white;
+    border-right: 5px #9356DC solid;
+  }
+
+  .block_functionning {
+    position: relative;
+  }
+
+  .block_functionning h2 {
+    position: absolute;
+    top: 0%;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(243, 239, 239, 0.9);
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  }
+
+  .steps {
+    margin-top: 60px;
+  }
+
+  .block_location {
+    background: rgba(243, 239, 239, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    font-family: font_text_bold;
+    font-size: 1.3em;
+  }
+
+  .restaurants {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "restaurant1 restaurant2" "restaurant3 restaurant4";
+    margin-left: 5%;
+    margin-right: 5%;
+    row-gap: 30px;
+    column-gap: 4%;
+  }
+}
+@media (min-width: 1800px) {
+  section {
+    margin: auto;
+  }
+
+  .block_location {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+  }
+
+  .block_functionning h2 {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+  }
+
+  .block_restaurant {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-bottom: 30px;
+  }
+}
 footer img {
-  height: 20px;
+  height: 40px;
+  width: 40pw;
+}
+
+footer {
+  background: #3d3d3d;
+  display: flex;
+  flex-direction: column;
+  height: 275px;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding-left: 3%;
+  height: 45px;
+}
+footer a i {
+  margin-right: 10px;
+}
+
+footer a:first-child {
+  font-family: font_title;
+  font-size: 1.5em;
+  padding-top: 10px;
+}
+
+.steps div:hover {
+  background: rgba(147, 86, 220, 0.2);
+}
+
+.Palette_Gout:hover > .description_restaurant i:last-child {
+  display: flex;
+  background: linear-gradient(to right, rgba(22, 146, 230, 0.1), rgba(255, 121, 218, 0.2));
+}
+
+@keyframes progress_hearth {
+  0% {
+    color: linear-gradient(to right, rgba(147, 86, 220, 0.2), rgba(255, 121, 218, 0.2));
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
