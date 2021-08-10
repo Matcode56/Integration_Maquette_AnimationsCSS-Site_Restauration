@@ -2,16 +2,15 @@
     background: rgb(147, 86, 220, 0.2);
 }
 
-.Palette_Gout:hover > .description_restaurant i:last-child{
-        display: flex;
-        background: linear-gradient(to right, rgba(22, 146, 230, 0.1), rgba(255, 121, 218, 0.2));
-        
+
+.second_heart{
+    color: transparent;
+    transition:background 1000ms;
+}
+.second_heart:hover{
+    background:-webkit-linear-gradient(top, rgb(147,86,220) , rgb(255, 121,218));
+    -webkit-background-clip: text;  
 }
 
-@keyframes progress_hearth {
-    0%{
-        color:linear-gradient(to right, rgba(147, 86, 220, 0.2), rgba(255, 121, 218, 0.2));
-    }
-}
 
 
