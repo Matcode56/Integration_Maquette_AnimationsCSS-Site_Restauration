@@ -1,4 +1,4 @@
-section{
+.section_homepage{
     display:grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 290px 450px auto;
@@ -204,7 +204,7 @@ section{
 
 
 @media (min-width: 700px) {
-    section{
+    .section_homepage{
         display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50px 420px auto;
@@ -263,7 +263,7 @@ section{
 }
 
 @media (min-width: 1800px) {
-    section{
+    .section_homepage{
         margin: auto;
     }
 

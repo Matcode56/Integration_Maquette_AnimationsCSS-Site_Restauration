@@ -1,0 +1,43 @@
+.image_menu{
+    height:300px;
+    width: 100%;
+}
+
+.block_menu{
+    height:600px;
+    background: $background_section;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    margin-top: -50px;
+    z-index: 1;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:100px 1fr;
+    grid-template-areas: "en-tete_menu"
+                          "starter";
+}
+
+.en-tete_menu{
+    grid-area:en-tete_menu;
+    position: relative;
+    display: flex;
+}
+
+.en-tete_menu h2{
+    margin-left:5%;
+    font-family: font_title;
+    font-size: 1.8em;
+    margin-top: 10%;
+}
+
+.heart_menu{
+    position: absolute;
+    right: 5%;
+    margin-top: 1%;
+    font-size: 1.8em;
+    color: grey;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
