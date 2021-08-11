@@ -19,7 +19,7 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: font_text_bold;
   margin: 0;
 }
@@ -28,15 +28,34 @@ img {
   object-fit: cover;
 }
 
+.button_style {
+  border-radius: 2rem;
+  background: linear-gradient(to right, #FF79DA, #9356DC);
+  color: white;
+  font-size: 1.1em;
+  height: 55px;
+  width: 220px;
+  border: none;
+}
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: 80px;
+  position: relative;
+  max-width: 2000px;
+  margin: auto;
 }
 
 header img {
-  height: 40px;
+  height: 35px;
+}
+
+header i {
+  position: absolute;
+  left: 3%;
+  font-size: 1.8em;
 }
 
 .section_homepage {
@@ -76,16 +95,6 @@ header img {
 
 .block_explore p {
   margin-bottom: 35px;
-}
-
-.block_explore button {
-  border-radius: 2rem;
-  background: linear-gradient(to right, #FF79DA, #9356DC);
-  color: white;
-  font-size: 1em;
-  height: 55px;
-  width: 220px;
-  border: none;
 }
 
 .block_functionning {
@@ -313,49 +322,151 @@ header img {
 .image_menu {
   height: 300px;
   width: 100%;
+  margin: 0;
+}
+
+.image_menu img {
+  height: 100%;
+  width: 100%;
 }
 
 .block_menu {
-  height: 600px;
   background: #f3efef;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  margin-top: -50px;
+  margin-top: -25px;
   z-index: 1;
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 1fr;
-  grid-template-areas: "en-tete_menu" "starter";
+  grid-template-rows: 80px 1fr 1fr 1fr 125px;
+  grid-template-areas: "en-tete_menu" "starter" "main_course" "desserts" "button";
+  row-gap: 20px;
+  padding-left: 3%;
+  padding-right: 3%;
+  max-width: 1400px;
 }
 
 .en-tete_menu {
   grid-area: en-tete_menu;
   position: relative;
   display: flex;
+  align-items: center;
 }
 
 .en-tete_menu h2 {
-  margin-left: 5%;
   font-family: font_title;
   font-size: 1.8em;
-  margin-top: 10%;
+  margin-top: 20px;
 }
 
 .heart_menu {
   position: absolute;
-  right: 5%;
-  margin-top: 1%;
+  right: 3%;
+  top: 38%;
   font-size: 1.8em;
   color: grey;
   height: 100%;
+}
+
+.block_menu h3 {
+  font-family: font_text;
+}
+
+.starter_part {
+  grid-area: starter;
+}
+
+.main_course {
+  grid-area: main_course;
+}
+
+.desserts {
+  grid-area: desserts;
+}
+
+.underline_title {
+  background: #99E2D0;
+  height: 5px;
+  width: 2.5rem;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+.card_meal {
+  background: white;
+  border-radius: 1rem;
+  padding-right: 3%;
+  padding-left: 3%;
+  margin-bottom: 20px;
+  height: 80px;
+}
+
+.card_meal h4 {
+  font-size: 1.1em;
+  height: 50%;
   display: flex;
   align-items: center;
 }
 
+.card_meal p {
+  margin: 0;
+}
+
+.description_meal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1em;
+  height: 50%;
+}
+
+.price_meal {
+  font-weight: bold;
+}
+
+.button_command {
+  grid-area: button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1125px) {
+  .image_menu {
+    height: 500px;
+    width: 100%;
+  }
+
+  .block_menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px 1fr 125px;
+    grid-template-areas: "en-tete_menu en-tete_menu en-tete_menu" "starter main_course desserts" "button button button";
+    row-gap: 40px;
+    column-gap: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: auto;
+    top: -70px;
+    border-radius: 3rem;
+  }
+}
+@media (min-width: 2000px) {
+  .image_menu {
+    width: 2000px;
+    margin: auto;
+  }
+
+  .image_menu img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+}
 footer img {
   height: 40px;
-  width: 40pw;
+  width: 40px;
 }
 
 footer {

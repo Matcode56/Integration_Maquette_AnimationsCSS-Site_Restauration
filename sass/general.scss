@@ -21,10 +21,13 @@ body{
 a{
     text-decoration: none;
 }
-h1, h2, h3{
+h1, h2, h3, h4{
     font-family: font_text_bold;
     margin:0;
 }
+
+
+
 $color_primary: #9356DC;
 
 $color_secondary: #FF79DA;
@@ -35,5 +38,16 @@ $background_section:rgb(243, 239, 239);
 
 img{
     object-fit: cover;
+}
+
+.button_style{
+    border-radius: 2rem;
+    background: linear-gradient(to right, $color_secondary, $color_primary);
+    color: white;
+    font-size: 1.1em;
+    height:55px;
+    width: 220px;
+    border: none;
+
 }
 

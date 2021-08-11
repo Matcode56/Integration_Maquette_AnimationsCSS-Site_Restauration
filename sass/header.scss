@@ -2,9 +2,19 @@ header{
     display:flex;
     justify-content: center;
     align-items: center;
-    height:70px;
+    height:80px;
+    position: relative;
+    max-width: 2000px;
+    margin: auto;
 }
 
 header img{
-    height:40px;
+    height:35px;
+}
+
+header i{
+    position: absolute;
+    left:3%;
+    font-size: 1.8em;
+
 }
