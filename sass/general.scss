@@ -20,12 +20,16 @@ body{
 
 a{
     text-decoration: none;
+    color: black;
 }
 h1, h2, h3, h4{
     font-family: font_text_bold;
     margin:0;
 }
 
+p{
+    margin:0;
+}
 
 
 $color_primary: #9356DC;

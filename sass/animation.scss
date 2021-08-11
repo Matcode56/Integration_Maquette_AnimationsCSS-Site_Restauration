@@ -1,3 +1,70 @@
+/*LOADER */
+
+.block_loader{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background: white;
+    z-index: 1;
+    animation: background_loader 5s;
+    animation-fill-mode: forwards;
+}
+.loader{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    border-top: 10px solid $color_primary;
+    border-right: 10px solid $color_tertiary;
+    border-left: 10px solid $color_tertiary;
+    border-bottom: 10px solid $color_primary;
+    position:fixed;
+    margin:auto;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background: white;
+    animation: spin 5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-fill-mode: forwards;
+}
+
+.loader p{
+    font-family: font_title;
+    font-size: 1.8em;
+}
+
+@keyframes background_loader{
+    0%{
+        opacity: 1;
+    }
+
+    60%{
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 0;
+    }
+    100%{
+        z-index: -2;
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 0;
+        z-index: -2;
+    }
+}
+
+/* HOMEPAGE */
 .steps div:hover{
     background: rgb(147, 86, 220, 0.2);
 }
@@ -5,12 +72,19 @@
 
 .second_heart{
     color: transparent;
-    transition:background 1000ms;
+    background:-webkit-linear-gradient(top, rgb(147,86,220,1) , rgb(255, 121,218,1));
+    -webkit-background-clip: text; 
+    opacity: 0;
+    transition: opacity 2s;
+
 }
 .second_heart:hover{
-    background:-webkit-linear-gradient(top, rgb(147,86,220) , rgb(255, 121,218));
-    -webkit-background-clip: text;  
+    opacity: 1;
+}
+
+.second_heart:active{
+    opacity: 1;
 }
 
 
-
+/* MENU */
