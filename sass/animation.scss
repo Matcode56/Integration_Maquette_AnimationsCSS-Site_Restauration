@@ -115,15 +115,33 @@
     }
 }
 
+.card_meal{
+    &:hover .anim_validate {
+    animation: validate_slide_left 400ms ease-in-out 10ms both;}
+
+    &:hover .price_meal{
+        animation: slide_price 400ms ease-in-out 10ms both;
+    }
+
+}
 
 
 
+@keyframes validate_slide_left {
+    0%{
+        transform: translateX(0%)
+    }
 
+    100%{
+        transform: translateX(-100%);
+    }
+}
 
-
-
-
-
-.card_meaddddl:hover{
-    animation:slide-left .5s ease-in-out both;
+@keyframes slide_price{
+    0%{
+        margin-right:0%;       
+    }
+    100%{
+        margin-right: 20%;
+    }
 }

@@ -401,10 +401,11 @@ header i {
 .card_meal {
   background: white;
   border-radius: 1rem;
-  padding-right: 3%;
   padding-left: 3%;
   margin-bottom: 20px;
   height: 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .card_meal h4 {
@@ -412,6 +413,9 @@ header i {
   height: 50%;
   display: flex;
   align-items: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card_meal p {
@@ -425,9 +429,36 @@ header i {
   font-size: 1.1em;
   height: 50%;
 }
+.description_meal p:first-child {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
 .price_meal {
   font-weight: bold;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.anim_validate {
+  position: absolute;
+  right: -20%;
+  top: 0%;
+  width: 20%;
+  height: 100%;
+  background: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.anim_validate i {
+  color: white;
+  font-size: 1.5em;
 }
 
 .button_command {
@@ -584,57 +615,51 @@ footer a:first-child {
 /* MENU */
 .delay1 {
   opacity: 0;
-  animation: display_card1 500ms ease-in-out 100ms both;
-  transform: scale(0);
+  animation: display_card 500ms ease-in-out 100ms forwards;
 }
 
-@keyframes display_card1 {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .delay2 {
   opacity: 0;
-  animation: display_card2 500ms ease-in-out 600ms both;
-  transform: scale(0);
-  animation-fill-mode: forwards;
+  animation: display_card 500ms ease-in-out 600ms forwards;
 }
 
-@keyframes display_card2 {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .delay3 {
   opacity: 0;
-  animation: display_card3 500ms ease-in-out 1100ms both;
-  transform: scale(0);
-  animation-fill-mode: forwards;
+  animation: display_card 500ms ease-in-out 1100ms forwards;
 }
 
-@keyframes display_card3 {
+@keyframes display_card {
   0% {
     opacity: 0;
     transform: translateY(100px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
-.card_meal:hover {
-  animation: slide-left;
-  animation-animation: slide-left 0.5s ease-in-out both;
+.card_meal:hover .anim_validate {
+  animation: validate_slide_left 400ms ease-in-out 10ms both;
+}
+.card_meal:hover .price_meal {
+  animation: slide_price 400ms ease-in-out 10ms both;
+}
+
+@keyframes validate_slide_left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide_price {
+  0% {
+    margin-right: 0%;
+  }
+  100% {
+    margin-right: 20%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
