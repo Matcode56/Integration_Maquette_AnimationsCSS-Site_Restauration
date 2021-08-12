@@ -88,3 +88,42 @@
 
 
 /* MENU */
+
+.delay1{
+    opacity:0;
+    animation: display_card 500ms ease-in-out 100ms forwards;
+}
+
+.delay2{
+    opacity:0;
+    animation: display_card 500ms ease-in-out 600ms forwards;
+}
+
+.delay3{
+    opacity:0;
+    animation: display_card 500ms ease-in-out 1100ms forwards;
+}
+
+@keyframes display_card {
+    0%{
+        opacity:0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity:1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.card_meaddddl:hover{
+    animation:slide-left .5s ease-in-out both;
+}

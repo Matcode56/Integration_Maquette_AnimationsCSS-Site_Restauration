@@ -582,5 +582,59 @@ footer a:first-child {
 }
 
 /* MENU */
+.delay1 {
+  opacity: 0;
+  animation: display_card1 500ms ease-in-out 100ms both;
+  transform: scale(0);
+}
+
+@keyframes display_card1 {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.delay2 {
+  opacity: 0;
+  animation: display_card2 500ms ease-in-out 600ms both;
+  transform: scale(0);
+  animation-fill-mode: forwards;
+}
+
+@keyframes display_card2 {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.delay3 {
+  opacity: 0;
+  animation: display_card3 500ms ease-in-out 1100ms both;
+  transform: scale(0);
+  animation-fill-mode: forwards;
+}
+
+@keyframes display_card3 {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card_meal:hover {
+  animation: slide-left;
+  animation-animation: slide-left 0.5s ease-in-out both;
+}
 
 /*# sourceMappingURL=style.css.map */
