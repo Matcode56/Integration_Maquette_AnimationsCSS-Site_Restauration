@@ -1,4 +1,3 @@
-
 .image_menu{
     height:300px;
     width: 100%;
@@ -9,6 +8,7 @@
     height:100%;
     width: 100%;
 }
+
 .block_menu{
     background: $background_section;
     border-top-left-radius: 2rem;
@@ -85,7 +85,17 @@
     height:80px;
     position: relative;
     overflow: hidden;
-  
+}
+
+@media (max-width:380px) {
+    .card_meal{
+        width:90vw;
+    }
+
+    .en-tete_menu h2{
+        width: 75vw;
+    }
+    
 }
 
 .card_meal h4{

@@ -1,14 +1,14 @@
 @font-face {
   font-family: font_title;
-  src: url(../Police/Title/Shrikhand-Regular.otf);
+  src: url("../Police/Title/Shrikhand-Regular.otf");
 }
 @font-face {
   font-family: font_text;
-  src: url(../Police/Text/Roboto-Light.ttf);
+  src: url("../Police/Text/Roboto-Light.ttf");
 }
 @font-face {
   font-family: font_text_bold;
-  src: url(../Police/Text/Roboto-Bold.ttf);
+  src: url("../Police/Text/Roboto-Bold.ttf");
 }
 body, h1, h2, h3, h4, p {
   font-family: font_text;
@@ -403,6 +403,15 @@ header a {
   overflow: hidden;
 }
 
+@media (max-width: 380px) {
+  .card_meal {
+    width: 90vw;
+  }
+
+  .en-tete_menu h2 {
+    width: 75vw;
+  }
+}
 .card_meal h4 {
   font-size: 1.1em;
   height: 50%;
@@ -527,7 +536,7 @@ footer a:first-child {
   height: 100%;
   background: white;
   z-index: 1;
-  animation: background_loader 10000ms;
+  animation: background_loader 3s;
   animation-fill-mode: forwards;
 }
 
@@ -546,7 +555,7 @@ footer a:first-child {
   right: 0;
   left: 0;
   background: white;
-  animation: spin 5000ms;
+  animation: spin 2s;
   display: flex;
   justify-content: center;
   align-items: center;
