@@ -10,7 +10,7 @@
   font-family: font_text_bold;
   src: url(../Police/Text/Roboto-Bold.ttf);
 }
-body {
+body, h1, h2, h3, h4, p {
   font-family: font_text;
   margin: 0;
 }
@@ -22,11 +22,6 @@ a {
 
 h1, h2, h3, h4 {
   font-family: font_text_bold;
-  margin: 0;
-}
-
-p {
-  margin: 0;
 }
 
 img {
@@ -57,7 +52,7 @@ header img {
   height: 35px;
 }
 
-header i {
+header a {
   position: absolute;
   left: 3%;
   font-size: 1.8em;
@@ -418,10 +413,6 @@ header i {
   overflow: hidden;
 }
 
-.card_meal p {
-  margin: 0;
-}
-
 .description_meal {
   display: flex;
   justify-content: space-between;
@@ -536,7 +527,7 @@ footer a:first-child {
   height: 100%;
   background: white;
   z-index: 1;
-  animation: background_loader 5s;
+  animation: background_loader 10000ms;
   animation-fill-mode: forwards;
 }
 
@@ -555,7 +546,7 @@ footer a:first-child {
   right: 0;
   left: 0;
   background: white;
-  animation: spin 5s;
+  animation: spin 5000ms;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -571,14 +562,12 @@ footer a:first-child {
   0% {
     opacity: 1;
   }
-  60% {
+  99% {
     opacity: 1;
-  }
-  90% {
-    opacity: 0;
   }
   100% {
     z-index: -2;
+    opacity: 0;
   }
 }
 @keyframes spin {
@@ -608,10 +597,6 @@ footer a:first-child {
   opacity: 1;
 }
 
-.second_heart:active {
-  opacity: 1;
-}
-
 /* MENU */
 .delay1 {
   opacity: 0;
@@ -626,6 +611,11 @@ footer a:first-child {
 .delay3 {
   opacity: 0;
   animation: display_card 500ms ease-in-out 1100ms forwards;
+}
+
+.delay4 {
+  opacity: 0;
+  animation: display_card 500ms ease-in-out 1600ms forwards;
 }
 
 @keyframes display_card {
@@ -644,6 +634,9 @@ footer a:first-child {
 .card_meal:hover .price_meal {
   animation: slide_price 400ms ease-in-out 10ms both;
 }
+.card_meal:hover .anim_validate i {
+  animation: rotate_validate 400ms ease-in-out 10ms both;
+}
 
 @keyframes validate_slide_left {
   0% {
@@ -659,6 +652,14 @@ footer a:first-child {
   }
   100% {
     margin-right: 20%;
+  }
+}
+@keyframes rotate_validate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 

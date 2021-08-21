@@ -6,7 +6,7 @@
     height:100%;
     background: white;
     z-index: 1;
-    animation: background_loader 5s;
+    animation: background_loader 10000ms;
     animation-fill-mode: forwards;
 }
 .loader{
@@ -24,7 +24,7 @@
     right:0;
     left:0;
     background: white;
-    animation: spin 5s;
+    animation: spin 5000ms;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,15 +41,12 @@
         opacity: 1;
     }
 
-    60%{
-        opacity: 1;
-    }
-
-    90%{
-        opacity: 0;
+    99%{
+        opacity:1;
     }
     100%{
         z-index: -2;
+        opacity:0;
     }
 }
 
@@ -82,10 +79,6 @@
     opacity: 1;
 }
 
-.second_heart:active{
-    opacity: 1;
-}
-
 
 /* MENU */
 
@@ -104,6 +97,11 @@
     animation: display_card 500ms ease-in-out 1100ms forwards;
 }
 
+.delay4{
+    opacity: 0;
+    animation: display_card 500ms ease-in-out 1600ms forwards;
+}
+
 @keyframes display_card {
     0%{
         opacity:0;
@@ -120,7 +118,10 @@
     animation: validate_slide_left 400ms ease-in-out 10ms both;}
 
     &:hover .price_meal{
-        animation: slide_price 400ms ease-in-out 10ms both;
+        animation: slide_price 400ms ease-in-out 10ms both;}
+    
+    &:hover .anim_validate i{
+        animation: rotate_validate 400ms ease-in-out 10ms both;
     }
 
 }
@@ -143,5 +144,15 @@
     }
     100%{
         margin-right: 20%;
+    }
+}
+
+@keyframes rotate_validate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
     }
 }

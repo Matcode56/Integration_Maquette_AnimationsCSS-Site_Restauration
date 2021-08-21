@@ -13,7 +13,7 @@
     src: url(../Police/Text/Roboto-Bold.ttf);
 }
 
-body{
+body, h1, h2, h3, h4, p{
     font-family: font_text;
     margin:0;
 }
@@ -24,12 +24,8 @@ a{
 }
 h1, h2, h3, h4{
     font-family: font_text_bold;
-    margin:0;
 }
 
-p{
-    margin:0;
-}
 
 
 $color_primary: #9356DC;
