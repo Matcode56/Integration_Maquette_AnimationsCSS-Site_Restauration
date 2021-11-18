@@ -23,7 +23,7 @@ Objectif du projet:
 
 2) Au survol, les boutons dans la rubrique fonctionnement doivent s'agrandir en changeant de couleur.
 
-3) Au survol, les boutons EXPLORER/COMMADER doivent s'agrandir.
+3) Au survol, les boutons EXPLORER/COMMANDER doivent s'agrandir.
 
 4) Lors du chargement de la page d'acceuil, un loadspinner doit apparaître.
 
