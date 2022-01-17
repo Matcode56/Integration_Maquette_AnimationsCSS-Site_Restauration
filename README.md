@@ -1,6 +1,6 @@
-# Projet-Apprentissage-FRONTEND-CSS-Animation-SASS-Responsive
+# Intégration_Maquette_AnimationsCSS-Site_Restauration
 
-Objectif: Réaliser la "stylisation" d'un site web comprenant des animations CSS.
+Objectif: Intégrer maquette sur plusieurs pages avec des animations CSS
 
 
 Langages/Frameworks utilisés dans ce projet:
